@@ -22,7 +22,6 @@ export const getAllproductsStatic = async (req, res) => {
 
   //filter by numbers
   if (numericFilters) {
-    console.log(numericFilters);
     const operatorMap = {
       ">": "$gt",
       ">=": "$gte",
@@ -49,7 +48,6 @@ export const getAllproductsStatic = async (req, res) => {
     });
   }
 
-  console.log(queryObject);
   let result = Model.find(queryObject);
 
   //sort items
