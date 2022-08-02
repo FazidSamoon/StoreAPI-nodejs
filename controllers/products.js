@@ -19,8 +19,6 @@ export const getAllproductsStatic = async (req, res) => {
   if (featured) {
     queryObject.featured = featured === "true" ? true : false;
   }
- 
-
 
   //filter by numbers
   if (numericFilters) {
@@ -39,7 +37,6 @@ export const getAllproductsStatic = async (req, res) => {
       (match) => `-${operatorMap[match]}-`
     );
 
-   
     const options = ["price", "rating"]; //option which works only for numericFilters
     filters = filters.split(",").forEach((item) => {
       const [field, operator, value] = item.split("-"); //since filters are devided by - in '-${operatorMap[match]}-' can split it using -
